@@ -3,7 +3,7 @@
 .form-container {
   display: flex;
   form {
-    width: 60%;
+    width: 95%;
     display: flex;
     flex-direction: column;
     input[type="submit"] {
@@ -19,7 +19,7 @@
       }
     }
     .button {
-      @include redButton();
+      @include Button(#ff441b);
     }
   }
 }

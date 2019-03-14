@@ -2,7 +2,7 @@ import { createStore, combineReducers, applyMiddleware } from "redux";
 import thunk from "redux-thunk";
 import { routerMiddleware, connectRouter } from "connected-react-router";
 import { createBrowserHistory } from "history";
-import projects from "redux/modules/projects";
+import { projects, proHasErrored, proIsLoading } from "redux/modules/projects";
 
 const history = createBrowserHistory();
 
@@ -20,7 +20,9 @@ if (env === "development") {
 const reducer = combineReducers({
   // put all your reducers here
   router: connectRouter(history),
-  projects
+  projects,
+  proHasErrored,
+  proIsLoading
 });
 
 let store = initialState =>

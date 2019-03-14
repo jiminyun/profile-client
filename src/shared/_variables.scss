@@ -9,10 +9,10 @@ $min-page-height: 600px;
 $normal-font-size: 20 px;
 
 //button
-@mixin redButton() {
+@mixin Button($color) {
   -webkit-appearance: none;
   border-radius: 3px;
-  background-color: $theme-red;
+  background-color: $color;
   color: white;
   font-weight: 600;
   border: 0;
