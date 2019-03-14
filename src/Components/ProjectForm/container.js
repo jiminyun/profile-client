@@ -34,7 +34,9 @@ export default class extends React.Component {
 
   _handleSubmit = event => {
     const { title, filePath, description, status } = this.state;
+    const { saveProject } = this.props;
     event.preventDefault();
     console.log("submit");
+    saveProject(title, filePath, description, status);
   };
 }

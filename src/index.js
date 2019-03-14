@@ -6,7 +6,7 @@ import store, { history } from "redux/configureStore";
 import App from "components/App";
 
 console.log(store.getState());
-store.dispatch({ type: "hello" });
+//store.dispatch({ type: "hello" });
 
 ReactDOM.render(
   <Provider store={store}>
