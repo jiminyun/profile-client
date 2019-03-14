@@ -1,6 +1,6 @@
 import React from "react";
 import "./styles.scss";
-import Navigation from "Components/Navigation";
+import Navigation from "components/Navigation";
 const Home = () => {
   return (
     <div className="home-container">
@@ -107,9 +107,9 @@ const Home = () => {
         <Navigation />
         <div id="contact">
           <h2>`// Contact`</h2>
-          <div class="tel"> 핸폰 647 - 456 -3502</div>
-          <div class="tel"> 링크 jiminyun7@gmail.com</div>
-          <div class="tel"> 아이콘 link-in, Git-hub</div>
+          <div className="tel"> 핸폰 647 - 456 -3502</div>
+          <div className="tel"> 이메일 jiminyun7@gmail.com</div>
+          <div className="tel"> 아이콘링크 link-in, Git-hub</div>
         </div>
         <div id="skills">
           <h2>`// Skills`</h2>
@@ -126,7 +126,7 @@ const Home = () => {
           <div className="skill">Apollo</div>
           <div className="skill">Redux</div>
           <div className="skill">ReactNative</div>
-
+          <div className="skill">Styled Component</div>
           <div className="skill">CSS</div>
           <div className="skill">ES6</div>
           <div className="skill">Python Django API</div>

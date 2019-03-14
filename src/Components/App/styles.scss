@@ -1,5 +1,5 @@
 @import "~reset-css/reset.css";
-@import "../config/_variables";
+@import "../../shared/_variables";
 @import url("https://fonts.googleapis.com/css?family=Roboto:400,700");
 
 body {
@@ -10,6 +10,7 @@ body {
   //  Arial, sans-serif;
   font-family: "Open Sans", Arial, Tahoma;
   color: #363636;
+  margin-bottom: 15px;
 }
 
 * {

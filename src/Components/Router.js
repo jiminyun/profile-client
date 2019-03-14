@@ -5,10 +5,10 @@ import {
   Redirect,
   Switch
 } from "react-router-dom";
-import Home from "Routes/Home";
-import Admin from "Routes/Admin";
-import Blog from "Routes/Blog";
-import Project from "Routes/Project";
+import Home from "routes/Home";
+import Admin from "routes/Admin";
+import Blog from "routes/Blog";
+import Project from "routes/Project";
 
 export default () => (
   <Router>
