@@ -17,9 +17,13 @@ const mapDispatchToProps = (dispatch, ownProps) => {
   return {
     getProjects: () => {
       dispatch(projectAction.projectFetchData());
+    },
+    setEditClick: project => {
+      dispatch(projectAction.setEdit(project));
     }
   };
 };
+
 export default connect(
   mapStateToProps,
   mapDispatchToProps

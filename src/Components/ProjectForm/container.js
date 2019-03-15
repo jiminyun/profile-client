@@ -9,6 +9,17 @@ export default class extends React.Component {
     status: ""
   };
 
+  componentWillReceiveProps(nextProps) {
+    if (nextProps.projectToEdit) {
+      this.setState({
+        title: nextProps.projectToEdit.title,
+        description: nextProps.projectToEdit.description,
+        filePath: nextProps.projectToEdit.filePath,
+        status: nextProps.projectToEdit.status
+      });
+    }
+  }
+
   render() {
     const { filePath, title, description, status } = this.state;
     return (
@@ -34,9 +45,14 @@ export default class extends React.Component {
 
   _handleSubmit = event => {
     const { title, filePath, description, status } = this.state;
-    const { saveProject } = this.props;
+    const { saveProject, projectToEdit, updateProject } = this.props;
     event.preventDefault();
     console.log("submit");
-    saveProject(title, filePath, description, status);
+
+    if (!projectToEdit) {
+      saveProject(title, filePath, description, status);
+    } else {
+      updateProject(projectToEdit._id, title, filePath, description, status);
+    }
   };
 }

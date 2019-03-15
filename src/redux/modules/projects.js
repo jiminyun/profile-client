@@ -3,8 +3,10 @@ import axios from "axios";
 const API_URL = "http://localhost:4000/api/projects";
 // actions
 const ADD_PROJECT = "ADD_PROJECT";
-
-//examples
+const EDIT_PROJECT = "EDIT_PROJECT";
+const DEL_PROJECT = "DEL_PROJECT";
+const SET_EDIT = "SET_EDIT";
+//Fetch data
 const PROJECTS_HAS_ERRORED = "PROJECTS_HAS_ERRORED";
 const PROJECTS_IS_LOADING = "PROJECTS_IS_LOADING";
 const PROJECTS_LOADED = "PROJECTS_LOADED";
@@ -35,6 +37,27 @@ function projectsIsLoading(bool) {
   return {
     type: PROJECTS_IS_LOADING,
     isLoading: bool
+  };
+}
+
+function setEdit(project) {
+  return {
+    type: SET_EDIT,
+    projectToEdit: project
+  };
+}
+
+function editProject(id, uptProject) {
+  return {
+    type: EDIT_PROJECT,
+    id,
+    uptProject
+  };
+}
+
+function delProject(id) {
+  return {
+    type: DEL_PROJECT
   };
 }
 
@@ -87,6 +110,45 @@ function projectFetchData() {
   };
 }
 
+function updateProject(id, title, description, status, filePath) {
+  return (dispatch, getState) => {
+    axios
+      .patch(API_URL + "/" + id, {
+        title,
+        description,
+        status,
+        filePath,
+        id
+      })
+      //.then(res => console.log(res.data.projects + "/" + res.data.projects._id))
+      .then(response => {
+        console.log("a", response.data.project._id);
+        console.log("b", id);
+        if (response.status !== 200) {
+          throw Error(response.statusText);
+        }
+        dispatch(editProject(id, response.data.project));
+      })
+      .catch(err => console.log(err));
+  };
+}
+
+function deleteProject(id) {
+  return (dispatch, getState) => {
+    axios
+      .delete(API_URL, {
+        id
+      })
+      //.then(res => console.log(res.data.projects + "/" + res.data.projects._id))
+      .then(response => {
+        if (response.status !== 200) {
+          throw Error(response.statusText);
+        }
+        dispatch(delProject(id));
+      })
+      .catch(err => console.log(err));
+  };
+}
 // initial state
 const initialState = {
   projects: []
@@ -94,10 +156,16 @@ const initialState = {
 // reducer
 const projects = (state = initialState, action) => {
   switch (action.type) {
-    case "ADD_PROJECT":
+    case ADD_PROJECT:
       return applyAddProject(state, action);
-    case "PROJECTS_LOADED":
+    case PROJECTS_LOADED:
       return applyGetProjects(state, action);
+    case SET_EDIT:
+      return applySetEdit(state, action);
+    case EDIT_PROJECT:
+      return applyUpdate(state, action);
+    case DEL_PROJECT:
+      return applyDelProject(state, action);
     default:
       return state;
   }
@@ -136,11 +204,46 @@ function applyGetProjects(state, action) {
     projects: action.projects
   };
 }
+
+function applySetEdit(state, action) {
+  return {
+    ...state,
+    projectToEdit: action.projectToEdit
+  };
+}
+
+function applyUpdate(state, action) {
+  console.log(action.uptProject.id);
+  return {
+    ...state,
+    projects: state.projects.map(project => {
+      if (project._id === action.id) {
+        console.log("match");
+        console.log(action.updateProject);
+        return {
+          ...action.uptProject
+        };
+      }
+      return project;
+    }),
+    projectToEdit: undefined
+  };
+}
+
+function applyDelProject(state, action) {
+  return {
+    ...state,
+    projects: state.projects.filter(project => project._id !== action.id)
+  };
+}
 //exports
 
 const actionCreators = {
   saveProject,
-  projectFetchData
+  projectFetchData,
+  setEdit,
+  updateProject,
+  deleteProject
 };
 
 export { actionCreators };
