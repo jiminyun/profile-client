@@ -13,6 +13,7 @@ const PROJECTS_LOADED = "PROJECTS_LOADED";
 
 // action creatroes
 function addProject(newProject) {
+  //console.log("addProject", newProject);
   return {
     type: ADD_PROJECT,
     newProject
@@ -57,26 +58,24 @@ function editProject(id, uptProject) {
 
 function delProject(id) {
   return {
-    type: DEL_PROJECT
+    type: DEL_PROJECT,
+    id
   };
 }
 
 // api call
-function saveProject(title, description, status, filePath) {
+function saveProject(project) {
   return (dispatch, getState) => {
     axios
       .post(API_URL, {
-        title,
-        description,
-        status,
-        filePath
+        project
       })
-      //.then(res => console.log(res.data.projects + "/" + res.data.projects._id))
+      //.then(res => console.log(res.data.project))
       .then(response => {
         if (response.status !== 200) {
           throw Error(response.statusText);
         }
-        dispatch(addProject(response.data.projects));
+        dispatch(addProject(response.data.project));
       })
       .catch(err => console.log(err));
   };
@@ -110,24 +109,19 @@ function projectFetchData() {
   };
 }
 
-function updateProject(id, title, description, status, filePath) {
+function updateProject(id, project) {
   return (dispatch, getState) => {
     axios
       .patch(API_URL + "/" + id, {
-        title,
-        description,
-        status,
-        filePath,
-        id
+        project
       })
       //.then(res => console.log(res.data.projects + "/" + res.data.projects._id))
       .then(response => {
-        console.log("a", response.data.project._id);
-        console.log("b", id);
+        const { id, project } = response.data;
         if (response.status !== 200) {
           throw Error(response.statusText);
         }
-        dispatch(editProject(id, response.data.project));
+        dispatch(editProject(id, project));
       })
       .catch(err => console.log(err));
   };
@@ -136,7 +130,7 @@ function updateProject(id, title, description, status, filePath) {
 function deleteProject(id) {
   return (dispatch, getState) => {
     axios
-      .delete(API_URL, {
+      .delete(API_URL + "/" + id, {
         id
       })
       //.then(res => console.log(res.data.projects + "/" + res.data.projects._id))
@@ -213,7 +207,7 @@ function applySetEdit(state, action) {
 }
 
 function applyUpdate(state, action) {
-  console.log(action.uptProject.id);
+  //console.log(action.uptProject.id);
   return {
     ...state,
     projects: state.projects.map(project => {

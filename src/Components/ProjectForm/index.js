@@ -13,13 +13,11 @@ const mapStateToProps = (state, ownProps) => {
 
 const mapDispatchToProps = (dispatch, ownProps) => {
   return {
-    saveProject: (title, filePath, description, status) => {
-      dispatch(projectAction.saveProject(title, filePath, description, status));
+    saveProject: project => {
+      dispatch(projectAction.saveProject(project));
     },
-    updateProject: (id, title, filePath, description, status) => {
-      dispatch(
-        projectAction.updateProject(id, title, filePath, description, status)
-      );
+    updateProject: (id, project) => {
+      dispatch(projectAction.updateProject(id, project));
     }
   };
 };

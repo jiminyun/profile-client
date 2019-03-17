@@ -2,12 +2,58 @@ import React from "react";
 import "./styles.scss";
 import Navigation from "components/Navigation";
 
-const ProjectPresenter = () => {
+const ProjectPresenter = props => {
+  const {
+    projects,
+    hasErrored,
+    isLoading,
+    setEditClick,
+    delProjectClick
+  } = props;
+  console.log(props);
+
+  if (hasErrored) {
+    return <p>Sorry! There was an error loading the items</p>;
+  }
+
+  if (isLoading) {
+    return <p>Loading…</p>;
+  }
+
+  const ListItem = props => {
+    return (
+      <div className="grid-item">
+        <div className="image" />
+        <div>{props.title}</div>
+        <div>{props.description}</div>
+      </div>
+    );
+  };
+
+  const List = props => {
+    const { projects, setEditClick } = props;
+    return projects.map(pjt => (
+      <ListItem
+        key={pjt._id}
+        title={pjt.title}
+        project={pjt}
+        setEditClick={setEditClick}
+        delProjectClick={delProjectClick}
+      />
+    ));
+  };
+
   return (
     <div className="home-container">
       <div className="column_left">
         <h2>`// PROJECTS` </h2>
-        <div />
+        <div class="grid-container">
+          <List
+            projects={projects}
+            setEditClick={setEditClick}
+            delProjectClick={delProjectClick}
+          />
+        </div>
       </div>
       <div className="column_right">
         <Navigation />

@@ -20,6 +20,9 @@ const mapDispatchToProps = (dispatch, ownProps) => {
     },
     setEditClick: project => {
       dispatch(projectAction.setEdit(project));
+    },
+    delProjectClick: id => {
+      dispatch(projectAction.deleteProject(id));
     }
   };
 };
