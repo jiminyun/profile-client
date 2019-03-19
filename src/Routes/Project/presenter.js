@@ -68,7 +68,6 @@ const ProjectPresenter = props => {
           <div className="skill">Nodejs</div>
           <div className="skill">Express</div>
           <div className="skill">Vanila Javascript</div>
-
           <div className="skill">MongoDB</div>
           <div className="skill">jQUERY</div>
           <div className="skill">PHP</div>
@@ -78,7 +77,6 @@ const ProjectPresenter = props => {
           <div className="skill">Apollo</div>
           <div className="skill">Redux</div>
           <div className="skill">ReactNative</div>
-
           <div className="skill">CSS</div>
           <div className="skill">ES6</div>
           <div className="skill">Python Django API</div>

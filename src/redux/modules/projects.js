@@ -1,5 +1,7 @@
 // imports
+
 import axios from "axios";
+
 const API_URL = "http://localhost:4000/api/projects";
 // actions
 const ADD_PROJECT = "ADD_PROJECT";
@@ -115,7 +117,7 @@ function updateProject(id, project) {
       .patch(API_URL + "/" + id, {
         project
       })
-      //.then(res => console.log(res.data.projects + "/" + res.data.projects._id))
+      //.then(res => console.log(res.data.project))
       .then(response => {
         const { id, project } = response.data;
         if (response.status !== 200) {
@@ -212,8 +214,7 @@ function applyUpdate(state, action) {
     ...state,
     projects: state.projects.map(project => {
       if (project._id === action.id) {
-        console.log("match");
-        console.log(action.updateProject);
+        console.log("updateProject", action.uptProject);
         return {
           ...action.uptProject
         };

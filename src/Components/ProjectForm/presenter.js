@@ -1,11 +1,18 @@
 import React from "react";
 import PropTypes from "prop-types";
+import { FilePond } from "react-filepond";
+import "filepond/dist/filepond.min.css";
+
 import "../../shared/formStyles.scss";
 
 const ProjectForm = props => {
   return (
     <div className="form-container">
-      <form onSubmit={props.handleSubmit} method="post">
+      <form
+        onSubmit={props.handleSubmit}
+        method="post"
+        enctype="multipart/form-data"
+      >
         * title{" "}
         <input
           className="text-input"
@@ -14,6 +21,32 @@ const ProjectForm = props => {
           value={props.title}
           onChange={props.handleInputChange}
         />
+        <div>
+          react
+          <input
+            type="checkbox"
+            id="react"
+            name="usedTechs"
+            value="react"
+            onChange={props.handleInputChange}
+          />
+          monogo
+          <input
+            type="checkbox"
+            id="mongo"
+            name="usedTechs"
+            value="monogo"
+            onChange={props.handleInputChange}
+          />
+          express
+          <input
+            type="checkbox"
+            id="express"
+            name="usedTechs"
+            value="express"
+            onChange={props.handleInputChange}
+          />
+        </div>
         git_link{" "}
         <input
           className="text-input"
@@ -48,14 +81,6 @@ const ProjectForm = props => {
           value={props.category}
           onChange={props.handleInputChange}
         />
-        usedTechs{" "}
-        <input
-          className="text-input"
-          name="usedTechs"
-          type="text"
-          value={props.usedTechs}
-          onChange={props.handleInputChange}
-        />
         status
         <input
           className="text-input"
@@ -64,21 +89,14 @@ const ProjectForm = props => {
           value={props.status}
           onChange={props.handleInputChange}
         />
-        image{" "}
-        <input
-          className="text-input"
-          name="image"
-          type="file"
-          value={props.image}
-          onChange={props.handleInputChange}
-        />
-        video{" "}
-        <input
-          className="text-input"
-          name="video"
-          type="file"
-          value={props.video}
-          onChange={props.handleInputChange}
+        <FilePond
+          files={props.files}
+          allowMultiple={true}
+          maxFiles={3}
+          server="http://localhost:4000/uploads/image"
+          onprocessfile={(error, file) =>
+            props.handleFile(file.serverId, file.fileType)
+          }
         />
         <input className="button" type="submit" />
       </form>
