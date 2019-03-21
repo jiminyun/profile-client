@@ -33,9 +33,9 @@ const ProjectForm = props => {
           monogo
           <input
             type="checkbox"
-            id="mongo"
+            id="mongodb"
             name="usedTechs"
-            value="monogo"
+            value="mongodb"
             onChange={props.handleInputChange}
           />
           express
@@ -44,6 +44,70 @@ const ProjectForm = props => {
             id="express"
             name="usedTechs"
             value="express"
+            onChange={props.handleInputChange}
+          />
+          graphql
+          <input
+            type="checkbox"
+            id="graphql"
+            name="usedTechs"
+            value="graphql"
+            onChange={props.handleInputChange}
+          />
+          prisma
+          <input
+            type="checkbox"
+            id="prisma"
+            name="usedTechs"
+            value="prisma"
+            onChange={props.handleInputChange}
+          />
+          nodejs
+          <input
+            type="checkbox"
+            id="nodejs"
+            name="usedTechs"
+            value="nodejs"
+            onChange={props.handleInputChange}
+          />
+          redux
+          <input
+            type="checkbox"
+            id="redux"
+            name="usedTechs"
+            value="redux"
+            onChange={props.handleInputChange}
+          />
+          sass
+          <input
+            type="checkbox"
+            id="sass"
+            name="usedTechs"
+            value="sass"
+            onChange={props.handleInputChange}
+          />
+          styled component
+          <input
+            type="checkbox"
+            id="styled-component"
+            name="usedTechs"
+            value="styled-component"
+            onChange={props.handleInputChange}
+          />
+          aws
+          <input
+            type="checkbox"
+            id="aws"
+            name="usedTechs"
+            value="aws"
+            onChange={props.handleInputChange}
+          />
+          vanila js
+          <input
+            type="checkbox"
+            id="js"
+            name="usedTechs"
+            value="js"
             onChange={props.handleInputChange}
           />
         </div>
@@ -63,13 +127,13 @@ const ProjectForm = props => {
         />
         detail_a{" "}
         <textarea
-          name="description_a"
+          name="detail_a"
           value={props.detail_a}
           onChange={props.handleInputChange}
         />
         detail_b{" "}
         <textarea
-          name="description_b"
+          name="detail_b"
           value={props.detail_b}
           onChange={props.handleInputChange}
         />
@@ -107,7 +171,7 @@ const ProjectForm = props => {
 ProjectForm.propTypes = {
   image: PropTypes.string.isRequired,
   title: PropTypes.string.isRequired,
-  description_a: PropTypes.string.isRequired,
+  detail_a: PropTypes.string.isRequired,
   handleSubmit: PropTypes.func.isRequired,
   handleInputChange: PropTypes.func.isRequired
 };

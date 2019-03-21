@@ -24,6 +24,7 @@ const Projects = props => {
     return (
       <div className="item">
         {props.title}
+        <img src={props.project.image} alt="profile-thumnail" />
         <button
           className="btn-del"
           onClick={() => props.delProjectClick(props.project._id)}

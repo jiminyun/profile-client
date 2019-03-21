@@ -5,7 +5,7 @@ const header = () => (
   <header>
     <div className="header-container">
       <div className="photo-header">
-        <img src={require("images/avatar.jpg")} alt="profile_image" />
+        <img src={require("images/me.jpg")} alt="profile_image" />
       </div>
       <h1>HELLO, </h1>
       <h2>

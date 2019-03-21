@@ -3,15 +3,15 @@ import Presenter from "./presenter";
 
 export default class extends React.Component {
   state = {
-    title: "title-test",
-    git_link: "git_link",
+    title: "",
+    git_link: "",
     image: "",
     video: "",
-    description: "description",
-    detail_a: "deatil_a",
-    detail_b: "detail_b",
-    category: "category",
-    status: "status",
+    description: "",
+    detail_a: "",
+    detail_b: "",
+    category: "",
+    status: "",
     usedTechs: [],
     // Set initial files, type 'local' means this is a file
     // that has already been uploaded to the server (see docs)
@@ -113,7 +113,7 @@ export default class extends React.Component {
   _handleFile = (filename, type) => {
     console.log("upload", type);
 
-    if (type === "image/jpeg") this.setState({ image: filename });
+    if (type === "image/png") this.setState({ image: filename });
     else this.setState({ video: filename });
   };
   _handleResetState = () => {

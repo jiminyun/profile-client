@@ -1,6 +1,8 @@
 import React from "react";
 import "./styles.scss";
 import Navigation from "components/Navigation";
+import Video from "components/Video";
+import Sidebar from "components/Side";
 
 const ProjectPresenter = props => {
   const {
@@ -8,9 +10,12 @@ const ProjectPresenter = props => {
     hasErrored,
     isLoading,
     setEditClick,
-    delProjectClick
+    delProjectClick,
+    openVideoClick,
+    closeVideoClick,
+    openVideo,
+    videoPath
   } = props;
-  console.log(props);
 
   if (hasErrored) {
     return <p>Sorry! There was an error loading the items</p>;
@@ -22,23 +27,47 @@ const ProjectPresenter = props => {
 
   const ListItem = props => {
     return (
-      <div className="grid-item">
-        <div className="image" />
-        <div>{props.title}</div>
-        <div>{props.description}</div>
-      </div>
+      <>
+        <div className="grid">
+          <span className="title">{props.project.title}</span>
+          <a href={props.project.video} target="_blank">
+            <i className="fab fa-github" />
+          </a>
+          <div className="grid-item">
+            <img
+              className="projectImg"
+              src={props.project.image}
+              alt="profile-thumnail"
+            />
+            <div class="overlay">
+              <div class="icon">
+                <i
+                  class="fas fa-location-arrow"
+                  onClick={() => openVideoClick(props.project.video)}
+                />
+              </div>
+            </div>
+          </div>
+          <div className="tech-container">
+            {props.project.usedTechs.map(tech => (
+              <div className={`tec ${tech}`}>{tech}</div>
+            ))}
+          </div>
+        </div>
+      </>
     );
   };
 
   const List = props => {
-    const { projects, setEditClick } = props;
+    const { projects, setEditClick, delProjectClick, openVideo } = props;
     return projects.map(pjt => (
       <ListItem
         key={pjt._id}
-        title={pjt.title}
         project={pjt}
         setEditClick={setEditClick}
         delProjectClick={delProjectClick}
+        openVideo={openVideo}
+        openVideoClick={openVideoClick}
       />
     ));
   };
@@ -52,36 +81,17 @@ const ProjectPresenter = props => {
             projects={projects}
             setEditClick={setEditClick}
             delProjectClick={delProjectClick}
+            openVideo={openVideo}
+            openVideoClick={openVideoClick}
           />
+          {openVideo && (
+            <Video videoPath={videoPath} closeVideoClick={closeVideoClick} />
+          )}
         </div>
       </div>
       <div className="column_right">
         <Navigation />
-        <div id="contact">
-          <h2>`// Contact`</h2>
-          <div className="tel"> 핸폰 647 - 456 -3502</div>
-          <div className="tel"> 이메일 jiminyun7@gmail.com</div>
-          <div className="tel"> 아이콘링크 link-in, Git-hub</div>
-        </div>
-        <div id="skills">
-          <h2>`// Skills`</h2>
-          <div className="skill">Nodejs</div>
-          <div className="skill">Express</div>
-          <div className="skill">Vanila Javascript</div>
-          <div className="skill">MongoDB</div>
-          <div className="skill">jQUERY</div>
-          <div className="skill">PHP</div>
-          <div className="skill">ASP.net</div>
-          <div className="skill">React</div>
-          <div className="skill">GraphQL</div>
-          <div className="skill">Apollo</div>
-          <div className="skill">Redux</div>
-          <div className="skill">ReactNative</div>
-          <div className="skill">CSS</div>
-          <div className="skill">ES6</div>
-          <div className="skill">Python Django API</div>
-          <div className="skill">Axois</div>
-        </div>
+        <Sidebar />
       </div>
     </div>
   );

@@ -22,6 +22,9 @@ export default withRouter(({ location: { pathname } }) => (
       <Menus current={pathname === "/blog"}>
         <a href="/blog">Blog</a>
       </Menus>
+      <Menus current={pathname === "/admin"}>
+        <a href="/admin">Admin</a>
+      </Menus>
     </ul>
   </Menus>
 ));

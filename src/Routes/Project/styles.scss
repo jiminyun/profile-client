@@ -1,5 +1,5 @@
 @import "../../shared/_variables";
-
+@import "../../shared/tag";
 .home-container {
   min-height: $min-page-height;
   max-width: $max-page-width;
@@ -17,24 +17,73 @@
 
     .grid-container {
       display: grid;
-      grid-template-columns: auto auto auto;
+      grid-template-columns: auto auto;
+    }
+    .grid {
+      margin: 10px;
+      border: 10px solid #ededed;
+      border-radius: 10px;
     }
     .grid-item {
       background: #fff;
       position: relative;
-      -webkit-box-shadow: 0 0 5px #ccc;
-      box-shadow: 0 0 5px #ccc;
       -webkit-transition: all 0.3s;
       transition: all 0.3s;
       overflow: hidden;
       text-overflow: ellipsis;
-      margin-bottom: 2rem;
-      margin: 10px;
-      .image {
-        background-color: #fdbab7;
-        width: 300px;
-        min-height: 200px;
+      //margin-bottom: 2rem;
+
+      &:hover .overlay {
+        opacity: 3;
+        zoom: 1;
+        filter: alpha(opacity=50);
+        -webkit-transition: opacity 0.15s ease-in-out;
+        -moz-transition: opacity 0.15s ease-in-out;
+        -ms-transition: opacity 0.15s ease-in-out;
+        -o-transition: opacity 0.15s ease-in-out;
+        transition: opacity 0.15s ease-in-out;
       }
+      &:hover .projectImg {
+        zoom: 1;
+        filter: alpha(opacity=50);
+        opacity: 0.5;
+        -webkit-transition: opacity 0.15s ease-in-out;
+        -moz-transition: opacity 0.15s ease-in-out;
+        -ms-transition: opacity 0.15s ease-in-out;
+        -o-transition: opacity 0.15s ease-in-out;
+        transition: opacity 0.15s ease-in-out;
+      }
+      .overlay {
+        position: absolute;
+        top: 0;
+        bottom: 0;
+        left: 0;
+        right: 0;
+        opacity: 0;
+        transition: 0.3s ease;
+      }
+      .icon {
+        color: black;
+        font-size: 50px;
+        position: absolute;
+        top: 50%;
+        left: 50%;
+        transform: translate(-50%, -50%);
+        -ms-transform: translate(-50%, -50%);
+        text-align: center;
+      }
+    }
+
+    .title {
+      font-size: 1rem;
+      line-height: 2.5;
+      font-weight: 700;
+      text-transform: uppercase;
+      letter-spacing: 0.1em;
+      padding-left: 10px;
+    }
+    .tech-container {
+      margin: 5px;
     }
   }
   //right sidebar
@@ -42,26 +91,6 @@
     width: 30%;
     margin-left: 10px;
     padding-right: 0;
-
-    .skill {
-      color: #fff;
-      display: inline-block;
-      margin-right: 5px;
-      margin-bottom: 5px;
-      padding: 5px 5px 5px 25px;
-      background: #f0563d;
-      position: relative;
-      font-size: 0.8em;
-    }
-    .skill:before {
-      content: "\f004";
-      font-family: FontAwesome;
-      font-style: normal;
-      font-weight: normal;
-      position: absolute;
-      top: 6px;
-      left: 7px;
-    }
   }
 
   p {
