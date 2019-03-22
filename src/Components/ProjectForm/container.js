@@ -78,7 +78,7 @@ export default class extends React.Component {
 
     if (checked) {
       //usedTechs.push(value);
-      if (usedTechs.indexOf(value) == -1) {
+      if (usedTechs.indexOf(value) === -1) {
         usedTechs.push(value);
       }
     } else {

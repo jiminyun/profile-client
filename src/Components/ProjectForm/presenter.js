@@ -11,7 +11,7 @@ const ProjectForm = props => {
       <form
         onSubmit={props.handleSubmit}
         method="post"
-        enctype="multipart/form-data"
+        encType="multipart/form-data"
       >
         * title{" "}
         <input

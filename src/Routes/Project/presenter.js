@@ -27,43 +27,43 @@ const ProjectPresenter = props => {
 
   const ListItem = props => {
     return (
-      <>
-        <div className="grid">
-          <span className="title">{props.project.title}</span>
-          <a href={props.project.video} target="_blank">
-            <i className="fab fa-github" />
-          </a>
-          <div className="grid-item">
-            <img
-              className="projectImg"
-              src={props.project.image}
-              alt="profile-thumnail"
-            />
-            <div class="overlay">
-              <div class="icon">
-                <i
-                  class="fas fa-location-arrow"
-                  onClick={() => openVideoClick(props.project.video)}
-                />
-              </div>
+      <div className="grid">
+        <span className="title">{props.project.title}</span>
+        <a href={props.project.video} target="blank">
+          <i className="fab fa-github" />
+        </a>
+        <div className="grid-item">
+          <img
+            className="projectImg"
+            src={props.project.image}
+            alt="profile-thumnail"
+          />
+          <div className="overlay">
+            <div className="icon">
+              <i
+                className="fas fa-play-circle"
+                onClick={() => openVideoClick(props.project.video)}
+              />
             </div>
           </div>
-          <div className="tech-container">
-            {props.project.usedTechs.map(tech => (
-              <div className={`tec ${tech}`}>{tech}</div>
-            ))}
-          </div>
         </div>
-      </>
+        <div className="tech-container">
+          {props.project.usedTechs.map(tech => (
+            <div className={`tec ${tech}`} key={tech}>
+              {tech}
+            </div>
+          ))}
+        </div>
+      </div>
     );
   };
 
   const List = props => {
     const { projects, setEditClick, delProjectClick, openVideo } = props;
-    return projects.map(pjt => (
+    return projects.map(project => (
       <ListItem
-        key={pjt._id}
-        project={pjt}
+        key={project._id}
+        project={project}
         setEditClick={setEditClick}
         delProjectClick={delProjectClick}
         openVideo={openVideo}
@@ -76,7 +76,7 @@ const ProjectPresenter = props => {
     <div className="home-container">
       <div className="column_left">
         <h2>`// PROJECTS` </h2>
-        <div class="grid-container">
+        <div className="grid-container">
           <List
             projects={projects}
             setEditClick={setEditClick}
