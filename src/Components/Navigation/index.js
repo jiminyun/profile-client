@@ -1,33 +1,27 @@
-import React from "react";
-import "./styles.scss";
+import { connect } from "react-redux";
+import Container from "./container";
+import { actionCreators as userAction } from "redux/actions/authentication";
 import { withRouter } from "react-router-dom";
-import styled from "styled-components";
 
-const Menus = styled.li`
-  list-style: none;
-  a {
-    background: ${props => (props.current ? "#ffbf00" : "")};
-  }
-`;
+const mapStateToProps = (state, ownProps) => {
+  const {
+    auth: { isAuthenticated }
+  } = state;
+  return {
+    isAuthenticated
+  };
+};
 
-export default withRouter(({ location: { pathname } }) => (
-  <Menus>
-    <ul className="tags">
-      <Menus current={pathname === "/"}>
-        <a href="/">Profile</a>
-      </Menus>
-      <Menus current={pathname === "/projects"}>
-        <a href="/projects">Projects</a>
-      </Menus>
-      <Menus current={pathname === "/blog"}>
-        <a href="/blog">Blog</a>
-      </Menus>
-      <Menus current={pathname === "/log in"}>
-        <a href="/login">Log in</a>
-      </Menus>
-      <Menus current={pathname === "/register"}>
-        <a href="/register">Sign up</a>
-      </Menus>
-    </ul>
-  </Menus>
-));
+const mapDispatchToProps = (dispatch, ownProps) => {
+  return {
+    logoutUser: hitory => {
+      //console.log(hitory);
+      dispatch(userAction.logoutUser(hitory));
+    }
+  };
+};
+
+export default connect(
+  mapStateToProps,
+  mapDispatchToProps
+)(withRouter(Container));

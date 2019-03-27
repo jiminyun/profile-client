@@ -1,9 +1,12 @@
 import React from "react";
 import Navigation from "components/Navigation";
+import classnames from "classnames";
 import "../../shared/formStyles.scss";
 import "./styles.scss";
 
 const Login = props => {
+  const { errors } = props;
+
   return (
     <div className="login-container">
       <div className="column_left">
@@ -13,6 +16,9 @@ const Login = props => {
             <input
               type="email"
               placeholder="Email"
+              className={classnames("form-control form-control-lg", {
+                "is-invalid": errors.email
+              })}
               name="email"
               onChange={props.handleInputChange}
               value={props.email}
@@ -21,6 +27,9 @@ const Login = props => {
             <input
               type="password"
               placeholder="Password"
+              className={classnames("form-control form-control-lg", {
+                "is-invalid": errors.password
+              })}
               name="password"
               onChange={props.handleInputChange}
               value={props.password}

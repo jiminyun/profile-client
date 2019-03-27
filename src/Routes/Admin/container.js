@@ -2,22 +2,15 @@ import React from "react";
 import Presenter from "./presenter";
 
 export default class extends React.Component {
-  state = {
-    status: "",
-    fileUrl: "",
-    title: "",
-    description: ""
-  };
+  // state = {
+  //   status: "",
+  //   fileUrl: "",
+  //   title: "",
+  //   description: ""
+  // };
 
   render() {
-    const { status, fileUrl, title, description } = this.state;
-    return (
-      <Presenter
-        status={status}
-        fileUrl={fileUrl}
-        title={title}
-        description={description}
-      />
-    );
+    //const { status, fileUrl, title, description } = this.state;
+    return <Presenter />;
   }
 }

@@ -11,6 +11,23 @@ export default class extends Component {
       password_confirm: "",
       errors: {}
     };
+    console.log("0.constructor");
+    console.log(this.props);
+  }
+
+  componentDidMount() {
+    if (this.props.auth.isAuthenticated) {
+      this.props.history.push("/");
+    }
+  }
+
+  componentWillReceiveProps(nextProps) {
+    console.log("2. componentWillReceiveProps");
+    if (nextProps.errors) {
+      this.setState({
+        errors: nextProps.errors
+      });
+    }
   }
 
   render() {
@@ -30,13 +47,19 @@ export default class extends Component {
   };
 
   handleSubmit = e => {
+    const { name, email, password, password_confirm } = this.state;
+    const { registerUser } = this.props;
+
+    //console.log(this.state);
+
     e.preventDefault();
     const user = {
-      name: this.state.name,
-      email: this.state.email,
-      password: this.state.password,
-      password_confirm: this.state.password_confirm
+      name,
+      email,
+      password,
+      password_confirm
     };
-    console.log(user);
+    //console.log(user);
+    registerUser(user, this.props.history);
   };
 }

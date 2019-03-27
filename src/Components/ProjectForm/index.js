@@ -1,6 +1,6 @@
 import { connect } from "react-redux";
 import Container from "./container";
-import { actionCreators as projectAction } from "redux/modules/projects";
+import { actionCreators as projectAction } from "redux/reducer/projects";
 
 const mapStateToProps = (state, ownProps) => {
   const {

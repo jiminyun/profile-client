@@ -2,7 +2,9 @@ import { createStore, combineReducers, applyMiddleware } from "redux";
 import thunk from "redux-thunk";
 import { routerMiddleware, connectRouter } from "connected-react-router";
 import { createBrowserHistory } from "history";
-import { projects, proHasErrored, proIsLoading } from "redux/modules/projects";
+import { projects, proHasErrored, proIsLoading } from "redux/reducer/projects";
+import errorReducer from "redux/reducer/errorReducer";
+import authReducer from "redux/reducer/authReducer";
 
 const history = createBrowserHistory();
 
@@ -22,7 +24,9 @@ const reducer = combineReducers({
   router: connectRouter(history),
   projects,
   proHasErrored,
-  proIsLoading
+  proIsLoading,
+  errors: errorReducer,
+  auth: authReducer
 });
 
 let store = initialState =>

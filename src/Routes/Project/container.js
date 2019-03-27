@@ -12,8 +12,6 @@ export default class extends React.Component {
     videoPath: null
   };
   componentDidMount() {
-    console.log("componentDidMount");
-    console.log(this.props);
     const { getProjects } = this.props;
     getProjects();
   }

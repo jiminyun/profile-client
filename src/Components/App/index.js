@@ -1,17 +1,13 @@
-import React, { Component } from "react";
-import Router from "components/router";
-import Header from "components/Header";
-import "./styles.scss";
+import { connect } from "react-redux";
+import Container from "./container";
 
-class App extends Component {
-  render() {
-    return (
-      <>
-        <Header />
-        <Router />
-      </>
-    );
-  }
-}
+const mapStateToProps = (state, ownProps) => {
+  const {
+    auth: { isAuthenticated }
+  } = state;
+  return {
+    isAuthenticated
+  };
+};
 
-export default App;
+export default connect(mapStateToProps)(Container);
