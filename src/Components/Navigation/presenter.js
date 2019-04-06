@@ -32,13 +32,13 @@ class Navigation extends React.Component {
 
           {isAuthenticated && (
             <>
+              <Menus current={pathname === "/admin"}>
+                <a href="/admin">Admin</a>
+              </Menus>
               <Menus current={pathname === "/login"}>
                 <button onClick={() => logoutUser(this.props.history)}>
                   logout
                 </button>
-              </Menus>
-              <Menus current={pathname === "/admin"}>
-                <a href="/admin">Admin</a>
               </Menus>
             </>
           )}

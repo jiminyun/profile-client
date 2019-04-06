@@ -10,7 +10,7 @@ const Video = props => {
         <div className="tel"> 아이콘링크 link-in, Git-hub</div>
       </div>
       <div id="skills">
-        <h2>`// Skills`</h2>
+        <h2>`// Skill Set`</h2>
         <div className="skill">Nodejs</div>
         <div className="skill">Express</div>
         <div className="skill">Vanila Javascript</div>
