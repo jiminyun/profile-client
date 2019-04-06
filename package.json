@@ -8,6 +8,7 @@
     "connected-react-router": "^6.3.2",
     "express-session": "^1.15.6",
     "filepond": "^4.2.0",
+    "gh-pages": "^2.0.1",
     "history": "^4.9.0",
     "jwt-decode": "^2.2.0",
     "node-sass": "^4.11.0",
@@ -31,8 +32,11 @@
     "start": "react-scripts start",
     "build": "react-scripts build",
     "test": "react-scripts test",
-    "eject": "react-scripts eject"
+    "eject": "react-scripts eject",
+    "deploy": "gh-pages -d build",
+    "predeploy": "yarn run build"
   },
+  "homepage": "https://jiminyun.github.io/profile-client",
   "eslintConfig": {
     "extends": "react-app"
   },
