@@ -4,7 +4,7 @@ import "./styles.scss";
 const Loading = props => (
   <div className="container">
     <img
-      src={require("../../images/loading.png")}
+      src={require("../../assets/loading.png")}
       className="spinner"
       alt="loading"
     />
