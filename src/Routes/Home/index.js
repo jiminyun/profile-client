@@ -60,11 +60,7 @@ const Home = () => {
                   <h3>Fanshawe Colleage, London, ON</h3>
                   <p>
                     Diploma in Internet Application and Web Development <br />
-                    Graduated with President's Honour Roll (4.16 GPA out of 4.2){" "}
-                    <br />
-                    Developed Skills : completed 5 projects in PHP, JQUERY and
-                    Lamp and mastered new internet technologies ; hybrid mobile
-                    application, Responsive UI, HTML5/CSS3, SEO and IIS etc.
+                    Graduated with President's Honour Roll (4.16 GPA out of 4.2)
                   </p>
                 </div>
               </li>

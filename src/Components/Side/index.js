@@ -1,13 +1,13 @@
 import React from "react";
-
+import "./styles.scss";
 const Video = props => {
   return (
     <>
-      <div id="contact">
+      <div className="contact">
         <h2>`// Contact`</h2>
-        <div className="tel"> 핸폰 647 - 456 -3502</div>
-        <div className="tel"> 이메일 jiminyun7@gmail.com</div>
-        <div className="tel"> 아이콘링크 link-in, Git-hub</div>
+        <i className="fa fa-phone">647 - 456 -3502 </i>
+        <br />
+        <i className="far fa-envelope-open"> jiminyun7@gmail.com </i>
       </div>
       <div id="skills">
         <h2>`// Skill Set`</h2>
@@ -22,11 +22,11 @@ const Video = props => {
         <div className="skill">GraphQL</div>
         <div className="skill">Apollo</div>
         <div className="skill">Redux</div>
-        <div className="skill">ReactNative</div>
         <div className="skill">CSS</div>
         <div className="skill">ES6</div>
         <div className="skill">Python Django API</div>
-        <div className="skill">Axois</div>
+        <div className="skill">MySql</div>
+        <div className="skill">MsSql</div>
       </div>
     </>
   );
