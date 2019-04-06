@@ -3,7 +3,7 @@ import "./styles.scss";
 import Navigation from "components/Navigation";
 import Video from "components/Video";
 import Sidebar from "components/Side";
-
+import Loading from "components/Loading";
 const ProjectPresenter = props => {
   const {
     projects,
@@ -22,7 +22,7 @@ const ProjectPresenter = props => {
   }
 
   if (isLoading) {
-    return <p>Loading…</p>;
+    return <Loading />;
   }
 
   const ListItem = props => {
