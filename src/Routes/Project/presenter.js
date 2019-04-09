@@ -29,7 +29,7 @@ const ProjectPresenter = props => {
     return (
       <div className="grid">
         <span className="title">{props.project.title}</span>
-        <a href={props.project.video} target="blank">
+        <a href={props.project.git_link} target="blank">
           <i className="fab fa-github" />
         </a>
         <div className="grid-item">

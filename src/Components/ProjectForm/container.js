@@ -98,10 +98,8 @@ export default class extends React.Component {
     //const { title, filePath, description, status } = this.state;
     const { saveProject, projectToEdit, updateProject } = this.props;
     event.preventDefault();
-    console.log("submit");
 
-    //create formData
-
+    //console.log(this.state);
     if (!projectToEdit) {
       saveProject(this.state);
     } else {

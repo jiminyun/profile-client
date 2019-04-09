@@ -21,6 +21,48 @@ const ProjectForm = props => {
           value={props.title}
           onChange={props.handleInputChange}
         />
+        git_link{" "}
+        <input
+          className="text-input"
+          name="git_link"
+          type="text"
+          value={props.git_link}
+          onChange={props.handleInputChange}
+        />
+        description{" "}
+        <textarea
+          name="description"
+          value={props.description}
+          onChange={props.handleInputChange}
+        />
+        detail_a{" "}
+        <textarea
+          name="detail_a"
+          value={props.detail_a}
+          onChange={props.handleInputChange}
+        />
+        detail_b{" "}
+        <textarea
+          name="detail_b"
+          value={props.detail_b}
+          onChange={props.handleInputChange}
+        />
+        category{" "}
+        <input
+          className="text-input"
+          name="category"
+          type="text"
+          value={props.category}
+          onChange={props.handleInputChange}
+        />
+        status
+        <input
+          className="text-input"
+          name="status"
+          type="text"
+          value={props.status}
+          onChange={props.handleInputChange}
+        />
         <div>
           react
           <input
@@ -111,48 +153,6 @@ const ProjectForm = props => {
             onChange={props.handleInputChange}
           />
         </div>
-        git_link{" "}
-        <input
-          className="text-input"
-          name="git_link"
-          type="text"
-          value={props.git_link}
-          onChange={props.handleInputChange}
-        />
-        description{" "}
-        <textarea
-          name="description"
-          value={props.description}
-          onChange={props.handleInputChange}
-        />
-        detail_a{" "}
-        <textarea
-          name="detail_a"
-          value={props.detail_a}
-          onChange={props.handleInputChange}
-        />
-        detail_b{" "}
-        <textarea
-          name="detail_b"
-          value={props.detail_b}
-          onChange={props.handleInputChange}
-        />
-        category{" "}
-        <input
-          className="text-input"
-          name="category"
-          type="text"
-          value={props.category}
-          onChange={props.handleInputChange}
-        />
-        status
-        <input
-          className="text-input"
-          name="status"
-          type="text"
-          value={props.status}
-          onChange={props.handleInputChange}
-        />
         <FilePond
           files={props.files}
           allowMultiple={true}
