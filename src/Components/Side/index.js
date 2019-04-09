@@ -5,9 +5,19 @@ const Video = props => {
     <>
       <div className="contact">
         <h2>`// Contact`</h2>
-        <i className="fa fa-phone">647 - 456 -3502 </i>
-        <br />
-        <i className="far fa-envelope-open"> jiminyun7@gmail.com </i>
+        <div className="sns">
+          <a href="mailto:jiminyun7@gmail.com" target="blank">
+            <i class="fab fa-mailchimp" />
+          </a>
+
+          <a href="https://github.com/jiminyun" target="blank">
+            <i class="fab fa-github" />
+          </a>
+          {"     "}
+          <a href="https://www.linkedin.com/in/jimin-yun/" target="blank">
+            <i class="fab fa-linkedin-in" />
+          </a>
+        </div>
       </div>
       <div id="skills">
         <h2>`// Skill Set`</h2>
@@ -22,6 +32,7 @@ const Video = props => {
         <div className="skill">GraphQL</div>
         <div className="skill">Apollo</div>
         <div className="skill">Redux</div>
+        <div className="skill">Scss</div>
         <div className="skill">CSS</div>
         <div className="skill">ES6</div>
         <div className="skill">Python Django API</div>

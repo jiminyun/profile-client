@@ -15,30 +15,39 @@ import Header from "components/Header";
 import "./styles.scss";
 
 const router = props => [
-  <Header />,
   props.isAuthenticated ? <PrivateRoutes key={2} /> : <PublicRoutes key={2} />
 ];
 
 const PrivateRoutes = props => (
-  <Switch>
-    <Route path="/admin" exact component={Admin} />
-    <Route path="/register" exact component={Register} />
-    <Route path="/login" exact component={Login} />
-    <Route path="/" exact component={Home} />
-    <Route path="/blog" exact component={Blog} />
-    <Route path="/projects" exact component={Project} />
-    <Redirect from="*" to="/" />
-  </Switch>
+  <Router>
+    <>
+      <Header />
+      <Switch>
+        <Route path="/admin" exact component={Admin} />
+        <Route path="/register" exact component={Register} />
+        <Route path="/login" exact component={Login} />
+        <Route path="/" exact component={Home} />
+        <Route path="/blog" exact component={Blog} />
+        <Route path="/projects" exact component={Project} />
+        <Redirect from="*" to="/" />
+      </Switch>
+    </>
+  </Router>
 );
 
 const PublicRoutes = props => (
-  <Switch>
-    <Route path="/" exact component={Home} />
-    <Route path="/blog" exact component={Blog} />
-    <Route path="/projects" exact component={Project} />
-    <Route path="/login" exact component={Login} />
-    <Redirect from="*" to="/" />
-  </Switch>
+  <Router>
+    <>
+      <Header />
+      <Switch>
+        <Route path="/" exact component={Home} />
+        <Route path="/blog" exact component={Blog} />
+        <Route path="/projects" exact component={Project} />
+        <Route path="/login" exact component={Login} />
+        <Redirect from="*" to="/" />
+      </Switch>
+    </>
+  </Router>
 );
 
 export default router;

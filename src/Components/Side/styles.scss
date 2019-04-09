@@ -1,2 +1,14 @@
-.contact {
+.sns {
+  display: flex;
+  justify-content: flex-start;
+  align-content: space-around;
+
+  i {
+    //color: red;
+    padding-right: 10px;
+  }
+}
+
+a:hover {
+  opacity: 0.5;
 }

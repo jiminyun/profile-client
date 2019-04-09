@@ -2,7 +2,7 @@ import React from "react";
 import PropTypes from "prop-types";
 import { FilePond } from "react-filepond";
 import "filepond/dist/filepond.min.css";
-
+import { UPLOAD_URL } from "routes/const";
 import "../../shared/formStyles.scss";
 
 const ProjectForm = props => {
@@ -157,7 +157,7 @@ const ProjectForm = props => {
           files={props.files}
           allowMultiple={true}
           maxFiles={3}
-          server="http://localhost:4000/uploads/image"
+          server={UPLOAD_URL}
           onprocessfile={(error, file) =>
             props.handleFile(file.serverId, file.fileType)
           }

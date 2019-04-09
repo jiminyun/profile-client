@@ -1,9 +1,7 @@
 // imports
-
 import axios from "axios";
+import { API_URL } from "routes/const";
 
-//const API_URL = "/api/projects";
-const API_URL = "https://frozen-shelf-35565.herokuapp.com/api/projects";
 // actions
 const ADD_PROJECT = "ADD_PROJECT";
 const EDIT_PROJECT = "EDIT_PROJECT";
@@ -70,7 +68,7 @@ function delProject(id) {
 function saveProject(project) {
   return (dispatch, getState) => {
     axios
-      .post(API_URL, {
+      .post(API_URL + "projects", {
         project
       })
       //.then(res => console.log(res.data.project))
@@ -97,7 +95,7 @@ export function errorAfterFiveSeconds() {
 function projectFetchData() {
   return dispatch => {
     dispatch(projectsIsLoading(true));
-    axios(API_URL)
+    axios(API_URL + "projects")
       .then(response => {
         //console.log("response", response);
         if (response.status !== 200) {
@@ -115,7 +113,7 @@ function projectFetchData() {
 function updateProject(id, project) {
   return (dispatch, getState) => {
     axios
-      .patch(API_URL + "/" + id, {
+      .patch(API_URL + "projects/" + id, {
         project
       })
       //.then(res => console.log(res.data.project))
@@ -133,7 +131,7 @@ function updateProject(id, project) {
 function deleteProject(id) {
   return (dispatch, getState) => {
     axios
-      .delete(API_URL + "/" + id, {
+      .delete(API_URL + "projects/" + id, {
         id
       })
       //.then(res => console.log(res.data.projects + "/" + res.data.projects._id))

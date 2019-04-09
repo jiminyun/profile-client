@@ -1,6 +1,6 @@
 import React from "react";
 import "./styles.scss";
-import { withRouter } from "react-router-dom";
+import { Link, withRouter } from "react-router-dom";
 import styled from "styled-components";
 
 const Menus = styled.li`
@@ -21,19 +21,19 @@ class Navigation extends React.Component {
       <Menus>
         <ul className="tags">
           <Menus current={pathname === "/"}>
-            ><a href="/">Profile</a>
+            <Link to="/">Profile</Link>
           </Menus>
           <Menus current={pathname === "/projects"}>
-            <a href="/projects">Projects</a>
+            <Link to="/projects">Projects</Link>
           </Menus>
           <Menus current={pathname === "/blog"}>
-            <a href="/blog">Blog</a>
+            <Link to="/blog">Blog</Link>
           </Menus>
 
           {isAuthenticated && (
             <>
               <Menus current={pathname === "/admin"}>
-                <a href="/admin">Admin</a>
+                <Link to="/admin">Admin</Link>
               </Menus>
               <Menus current={pathname === "/login"}>
                 <button onClick={() => logoutUser(this.props.history)}>

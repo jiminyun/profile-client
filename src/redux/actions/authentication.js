@@ -3,13 +3,12 @@ import axios from "axios";
 import { GET_ERRORS, SET_CURRENT_USER } from "./type";
 import setAuthToken from "../setAuthToken";
 import jwt_decode from "jwt-decode";
-
-const API_URL = "https://frozen-shelf-35565.herokuapp.com/api/users";
+import { API_URL } from "routes/const";
 
 // api call
 const registerUser = (user, history) => dispatch => {
   axios
-    .post(API_URL + "/register", user)
+    .post(API_URL + "users/register", user)
     .then(res => history.push("/login"))
     .catch(err => {
       dispatch(getErrors(err.response.data));
@@ -18,7 +17,7 @@ const registerUser = (user, history) => dispatch => {
 
 const loginUser = (user, history) => dispatch => {
   axios
-    .post(API_URL + "/login", user)
+    .post(API_URL + "users/login", user)
     .then(res => {
       //console.log(res.data);
       const { token } = res.data;
