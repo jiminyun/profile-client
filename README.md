@@ -4,8 +4,11 @@ Making my profile SPA with react + redux + node + express
 
 ##Screens
 
-- [ ] Register Project : Admin
-- [ ] Project
-- [ ] Home
+- [v] Admin : Register, Update, Delete Project
+- [v] Project
+- [v] Home
 - [ ] Blog
-- [ ] Detail
+- [v] Join/Login
+
+##Api Sever
+https://github.com/jiminyun/profile-server
