@@ -13,8 +13,12 @@ const Home = () => {
           hardworking and dedicated person, love to explore, always have a big
           hunger for new knowledge. I enjoy building applications with internet
           skills and trying to use modern web stack for efficient development in
-          performance and time recently I am studying React Hook, GraphQL,
-          Primsa and Typescript and want to grow Full Stack career.
+          performance and time recently I am studying{" "}
+          <span className="underline">React Hook</span>,{" "}
+          <span className="underline">GraphQL</span>,{" "}
+          <span className="underline">Primsa</span> and{" "}
+          <span className="underline">Typescript</span> and want to grow Full
+          Stack career.
         </p>
         <div className="experiences">
           <h2>'// experiences`</h2>
@@ -27,15 +31,29 @@ const Home = () => {
                 <div>
                   <ul className="tags">
                     <h3>Freelancer & Self taught </h3>
-                    <li>
-                      <Link to="/projects">Projects</Link>
-                    </li>
                   </ul>
                 </div>
 
                 <p>
-                  - Developed React + Redux + <br />
-                  - Developed MERN stacks
+                  - Insta Cloning : React + Redux + Django + PostgreSQL{" "}
+                  <a
+                    href="https://github.com/jiminyun/jiminstagram"
+                    target="blank"
+                  >
+                    <span className="git-hub">git-hub</span>
+                  </a>
+                  <br />- Youtube Cloning : Vanila JavaScript + Pug + Nodejs +
+                  Express + MongoDB{" "}
+                  <a href="https://github.com/jiminyun/JTube" target="blank">
+                    <span className="git-hub">git-hub</span>
+                  </a>
+                  <br />- Toy portfolio management : MERN stacks{" "}
+                  <a
+                    href="https://github.com/jiminyun/my-profile"
+                    target="blank"
+                  >
+                    <span className="git-hub">git-hub</span>
+                  </a>
                   <br />
                 </p>
               </div>
@@ -62,8 +80,14 @@ const Home = () => {
               <div className="description">
                 <h3>Senior Web Developer, LeadOn Company, Seoul, Korea </h3>
                 <p>
-                  - Diploma in Internet Application and Web Development <br />-
-                  Graduated with President's Honour Roll (4.16 GPA out of 4.2){" "}
+                  - Communicated with client and system requirement analysis as
+                  a project leader <br />
+                  - Collaborated with designers to produce efficient interfaces
+                  and simple, intuitive interactions and experiences to be able
+                  to manage complicated business logics. <br />- Developed
+                  product register from ware house system, display on mall,
+                  order, payment and delivery- process with HTML, CSS, jQuery,
+                  ASP.NET, MS-SQL, Microsoft Visual Source Safe
                 </p>
               </div>
             </li>
