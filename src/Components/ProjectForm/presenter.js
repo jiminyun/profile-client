@@ -72,12 +72,28 @@ const ProjectForm = props => {
             value="react"
             onChange={props.handleInputChange}
           />
-          monogo
+          mongodb
           <input
             type="checkbox"
             id="mongodb"
             name="usedTechs"
             value="mongodb"
+            onChange={props.handleInputChange}
+          />
+          PostgreSQL
+          <input
+            type="checkbox"
+            id="aws"
+            name="usedTechs"
+            value="postgresql"
+            onChange={props.handleInputChange}
+          />
+          Django
+          <input
+            type="checkbox"
+            id="aws"
+            name="usedTechs"
+            value="django"
             onChange={props.handleInputChange}
           />
           express
@@ -128,12 +144,44 @@ const ProjectForm = props => {
             value="sass"
             onChange={props.handleInputChange}
           />
-          styled component
+          styled components
           <input
             type="checkbox"
-            id="styled-component"
+            id="styled-components"
             name="usedTechs"
-            value="styled-component"
+            value="styled-components"
+            onChange={props.handleInputChange}
+          />
+          graphql
+          <input
+            type="checkbox"
+            id="graphql"
+            name="usedTechs"
+            value="graphql"
+            onChange={props.handleInputChange}
+          />
+          vanila js
+          <input
+            type="checkbox"
+            id="js"
+            name="usedTechs"
+            value="js"
+            onChange={props.handleInputChange}
+          />{" "}
+          es6
+          <input
+            type="checkbox"
+            id="js"
+            name="usedTechs"
+            value="es6"
+            onChange={props.handleInputChange}
+          />{" "}
+          pug
+          <input
+            type="checkbox"
+            id="redux"
+            name="usedTechs"
+            value="pug"
             onChange={props.handleInputChange}
           />
           aws
@@ -144,12 +192,28 @@ const ProjectForm = props => {
             value="aws"
             onChange={props.handleInputChange}
           />
-          vanila js
+          s3
           <input
             type="checkbox"
-            id="js"
+            id="aws"
             name="usedTechs"
-            value="js"
+            value="s3"
+            onChange={props.handleInputChange}
+          />
+          heroku
+          <input
+            type="checkbox"
+            id="aws"
+            name="usedTechs"
+            value="heroku"
+            onChange={props.handleInputChange}
+          />
+          netlify
+          <input
+            type="checkbox"
+            id="aws"
+            name="usedTechs"
+            value="netlify"
             onChange={props.handleInputChange}
           />
         </div>

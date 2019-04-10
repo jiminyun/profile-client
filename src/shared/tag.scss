@@ -23,11 +23,12 @@
 }
 .express {
   background-color: lightgray;
-  color: darkgray;
+  color: black;
 }
 .redux {
   background-color: white;
   color: #764abc;
+  border: 1px solid lightgray;
 }
 .graphql {
   background-color: white;
@@ -57,7 +58,30 @@
   background-color: #e0e0e0;
   color: #47a27a;
 }
-
+.pug {
+  background-color: #a86454;
+  color: #e0e0e0;
+}
+.heroku {
+  background-color: #51319e;
+  color: #e0e0e0;
+}
+.netlify {
+  background-color: #215a84;
+  color: #e0e0e0;
+}
+.es6 {
+  background-color: #f7df1e;
+  color: #000000;
+}
+.postgresql {
+  background-color: #215a84;
+  color: #e0e0e0;
+}
+.s3 {
+  background-color: #f2b675;
+  color: black;
+}
 .fab {
   font-size: 30px;
   float: right;

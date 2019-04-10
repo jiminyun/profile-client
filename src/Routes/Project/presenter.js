@@ -47,6 +47,7 @@ const ProjectPresenter = props => {
             </div>
           </div>
         </div>
+        <div className="description">{props.project.description}</div>
         <div className="tech-container">
           {props.project.usedTechs.map(tech => (
             <div className={`tec ${tech}`} key={tech}>

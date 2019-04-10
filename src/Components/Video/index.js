@@ -13,7 +13,7 @@ const Video = props => {
         close
       </i>
       <div className="videoPlayer">
-        <video width="80%" controls autoPlay>
+        <video width="60%" controls autoPlay>
           <source src={props.videoPath} type="video/mp4" />
         </video>
       </div>
