@@ -2,13 +2,13 @@
 
 Making my profile SPA with react + redux + node + express
 
-##Screens
+## Screens
 
-- [v] Admin : Register, Update, Delete Project
-- [v] Project
-- [v] Home
-- [ ] Blog
-- [v] Join/Login
+- [x] Admin : Register, Update, Delete Project
+- [x] Project
+- [x] Home
+- [x] Blog
+- [x] Join/Login
 
-##Api Sever
+##A pi Sever
 https://github.com/jiminyun/profile-server
