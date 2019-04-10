@@ -7,8 +7,9 @@ Making my profile SPA with react + redux + node + express
 - [x] Admin : Register, Update, Delete Project
 - [x] Project
 - [x] Home
-- [x] Blog
+- [ ] Blog
 - [x] Join/Login
 
-##A pi Sever
+## Api Sever
+
 https://github.com/jiminyun/profile-server
