@@ -12,7 +12,7 @@ Resume + Portfolio management with MERN stack
 - Backend
   - Mongo DB
   - Node.js/Express
-  - EC2, S3
+  - Heroku, S3
 
 ## Getting Started
 
